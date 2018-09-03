@@ -1,0 +1,35 @@
+linear-gradient(yellow, green); -- функция градиент от желтого к зеленому (сверху вниз)
+
+background-image: linear-gradient(yellow, green); -- применение градиента в качестве фона
+
+linear-gradient(to right, yellow, green); -- направление градиента с лево на право
+linear-gradient(to right top, yellow, green); --направление градиента с лево на право, с низу вверх (т.е по диагонали)
+
+linear-gradient(90deg, yellow, green); -- изменение градиента под углом
+
+linear-gradient(green, yellow, green); -- цвет изменяеться от зеленого к желтому и опять к зеленому
+
+/* симпатичный градиент
+background-image: linear-gradient(#86ff65, #06d);
+*/
+
+linear-gradient(yellow 50%, green 100%); -- расположение центральной части цвета(где начинает переходить в другой цвет) колорстоп
+
+/* резкий переход цветов
+linear-gradient(yellow 50%, green 50%);
+*/
+
+linear-gradient(to right, #e74c3c, #e74c3c 45%, transparent 45%, transparent 55%, #3498db 55%, #3498db); -- можно указать transparent(прозрачный), между цветами будет пробел
+
+repeating-linear-gradient(); -- повторяющийся градиент, если колорстоп задан в процентах то будет 2 раза повторяться
+
+/* можно установить размер градиента
+с помощью background-size: 10px 20px;
+*/
+
+/* разным градиентам разные размеры 
+background-image: linear-gradient(green-yellow),
+                  linear-gradient(orange-red);
+background-size: 100px 200px,
+                 200px 300px;
+*/

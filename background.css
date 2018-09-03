@@ -1,0 +1,41 @@
+background-color: #ffffff; -- цвет фона
+background-size: 25px auto;  -- размер фона
+background-image: url(ссылка/на/картинку) no-repeat 50% 50%; фон изображение координаты изображения
+
+background: transparent; -- прозрачный фон
+
+/* background - ставим в начало что-бы не испортить другие свойства */
+background: no-repeat 100% 50%;  100% отступ с левого края, 50% отступ от верхней границы
+background-repeat: repeat/repeat-x/repeat-y/no-repeat; -- повтор фонового изображения/по х/по у/ не повторять
+background-repeat: repeat/round; -- если части повторяющейся картины не помещаються, то обрезаеться/ картинки сжимаються чтоб занять всю площадь
+background-repeat: repeat round; по X применяеться - repeat, по Y применяеться - round; (по двум координатам)
+background-repeat: space; -- не обрезает картинку, а оставляет между ними свободное место
+
+background-clip -- как фон должен выводиться под границами блока (не для solid)
+background-clip: padding-box/border-box/content-box/text; (внутри границ/под границами/внутри контента/внутри текста)
+
+
+
+background-position: -40px 60%; расположение фона -40 - по х, 60 - по у. (x-left/center/right y - top/center/bottom)
+background-attachment: scroll/fixed; -- фон прокручиваеться вместе с содержимым/фон зафиксирова
+
+background: [B-color] [B-image] [B-repeat] [B-position] [B-attachment]; -- задать все свойства сразу
+background: 
+    url("img1.png") no-repeat 20px,
+    url("img2.png") repeat-x 50% 50%;
+/* использование нескольких фоновых изображений {
+        вкладываем блоки друг в друга и каждому задаем свой фон
+} */
+
+/* по умолчанию фоновое изображение сохраняет исходный размер */
+background-size: cover/contain; -- изображение заполняет весь родитель (если пропорции не те, то выпадает)/(если пропорции не те, то оставляет пустоты)
+background-size: 100% 200%; -- ширина - 100% (100% -- ширины родителя!), высота - 200%
+
+background-origin: padding-box/content-box/border-box; -- по умолчанию/фон ток у контента (без padding и border)/фон у всего блока (включая рамки)
+/* чтоб фоновое изображение было выше контента родителю задаем padding-top */
+background-clip: padding-box/content-box/border-box; -- как будет обрезаться фон (и цвет фона background-color)
+
+background-image: url("сверху"), url("снизу"); -- две фоновые картинки {
+    /* свойства задаються через запятую */
+    background-size: 150px, cover; -- верхняя - 150, нижняя - cover
+}

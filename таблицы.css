@@ -1,0 +1,44 @@
+border-collapse: collapse; убирает двойные рамки в таблице
+border-collapse: separate; добавляет двойные рамки
+border-spacing: 10px 20px; расстояние между рамками (10-горизонтольное 20-вертикальное)
+
+table {
+    caption-side: top/bottom/left/right/center;
+    border: 6px;
+}     <-- можно сделать разную толщину внешней границы и внутренней
+td {
+    border: 3px;
+}
+
+/* лучше задавать свойства ячейки через ее родителя (.родитель td {свойства}) */
+
+Таблицы на css {
+    display: table; -- элемент становиться таблицей, по умолчанию ширина зависит от контента
+        <tr> - display: table-row; -- можно задать ток цвет фона (не забывай указывать)
+        <td> - display: table-cell; -- свойства для ячейки   
+    display: none; -- элемент не показываеться и не занимает места
+    display: table-caption; -- заголовок таблицы
+    caption-side: bottom; -- расположение заголовка таблицы
+    display: table-header-group (<thead>);
+    display: table-row-group (<tbody>);
+    display: table-footer-group (<tfoot>);
+    display: table-column (<col>) свойства первого столбца;
+    display: table-column-group (<colgrup>) группа столбцов;
+    display: inline-table; может распологаться в строку;
+    
+    блок разместить по центру {
+        /* блок вкладываем в ячейку */
+        <div class="table">
+            <div class="cell">
+                <div class="block"> -- блок который надо центровать
+                </div>
+            </div>
+        </div>
+        
+        .cell {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+border: 5px solid(сплошная)/dashed(пунктирная)/dotted(точками) red; 
+border-collapse: collapse/separate; убирает двойные рамки в таблице/добавляет двойные рамки
+
+border-spacing: 10px 20px; расстояние между рамками (10-горизонтольное 20-вертикальное)
+
+border-radius: 5px;  --  закругление ячейки {
+    border-radius: 50%; -- получаеться круг
+    border-top-right-radius: 10px 20px; -- скругление у верхнего правого угла, 10px - горизонтальный радиус, 20px - вертикальный радиус 
+}
+
+border-image-source: url("картинка вместо фона"); -- по умолчанию прост располагает по углам
+border-image-slice: 50; -- картинку распилят на области по 50px и заполнят ею весь border;
+border-image-slice: 10 20 30 40 fill; верх право низ лево, fill - средняя часть картинки закроет собой фон блока
+border-image-repeat: stretch/repeat/space/round; -- картинки вне угла растягиваються/повторяються(обрезаються)/остаеться свободное место/повторяються(сжимаються)
+border-image-width: 10px; -- ширина картинки, если больше чем border-width, то закрывает собой фон
+border-image-outset: 10px; -- передвигает фон границы, подальше от родителя
+/* border-image не поддерживает border-radius */
+outline: 1px solid red; -- в отличие от border не влияет на его ширину и положение блока {
+    outline-width: 1px;
+    outline-style: solid; /* по отдельности задать все свойства */
+    outline-color: red;
+}
+outline-style: ridge; -- объемная рамка
+outline-offset: 10px; отступ рамки от первонального положения(может быть отрицательным -10px)
+
+border-left-color: transparent; -- левая граница становиться прозрачной
+border-right-width: 10px; -- ширина правой рамки 10px
+
+/* РАМКИ ТРЕУГОЛЬНИКИ */
+рамки рисуються как у картин, т.е состоят из трапеций
+если width и height задать нулевыми то четыре границы (border-top/bottom/left/right) станут треугольниками
+
+/* в курсе по less зачем-то задали border-top-style: none; */
+
+
+

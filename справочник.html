@@ -1,0 +1,289 @@
+<html lang="ru"> -- весь код оборачиваем в этот тег
+<span> -- выделение слов для css
+<hr> - горизонтальная линия на следующей строке
+<br> - перенос текста с нового абзаца
+<b> - выделение текста (становиться жирным, без придания важности)
+<i> - выделение терминов (выделяем отличающийся текст который не явл главным)
+<em> - шрифт становится косым (выделяем текст на котором нужно сделать акцент)
+<pre>  - добавляет пробелы(меняет шрифт!)
+<blockquote> - для выделение длинных цитат
+<q> - выделение коротких цитат
+<cite> - автор 
+<sup> - верхний индекс
+<sub> - нижний индекс
+<mark> - выделяет текст желтым
+<del> - перечеркнутый тект
+<ins> - нижнее подчеркивание
+<section> - смысловой раздел документа
+<aside> - не связано с основным содержанием(сайдбар)
+<article> - самостаятельный,независимый раздел(как отдельный сайт) имеет свою шапку, подвал, разделы
+<nav> - вкладывают приоритетные ссылки(шапка сайта)
+<main> - основная часть сайта, ток оригинальный контент
+class="photocard" - делает из картинки аву
+<meta name="keywords" content="инфа для поисковика">
+<meta charset="utf-8"> -- кодировка страницы
+<meta name="description" content="ккраткое описание для поисковика">
+<link href="style.css" rel="stylesheet"> подключение css
+<script src="script.js"></script> подключение скриптов
+<title>Заголовок(на вкладке)</title>
+
+<спец-символы>
+    <&lt -- < (чтоб вывести спец символ)
+    <&gt -- >
+</спец-символы>
+
+<СПИСКИ>
+<ul>
+    <li>пункты списка</li>
+    <li>доп пункты</li>
+</ul>
+
+<ol start=3>
+    <li>пронумерованные пункты</li>
+</ol>
+
+<ol>
+    <li>
+        вложенные списки
+        <ol>
+            <li>h1</li>
+            <li>h2</li>
+        </ol>
+    </li>
+</ol>
+
+<dl>
+    <dt>термин</dt>
+    <dd>определение</dd>
+</dl>
+</СПИСКИ>
+
+<a title="подсказка" href="https://google.com">ссылка на гугл</a>
+
+href="/files" - начинаем путь из данной директории
+href="#id-элемента" - якорь
+
+<a href="#" target="_self"> -- ссылка открываеться в той же вкладке
+<a href="#" target="_blank"> -- ссылка открываеться в НОВОЙ вкладке
+
+<a href="#content"></a> -- при нажатии браузер прокрутит окно страницы к элементу с id="content" (якорь)
+
+<!-- ссылки располагаються друг за другом по горизонтали -->
+
+<img width="100" src="ссылка на рисунок" alt="альтернативный текст"> - px не указываем height-не указывать из-за нарушении пропорции
+
+<!-- обязательно указывать настоящие размеры (width height) изображения в HTML -->
+
+<a href="ссылка"> - картинка ссылка
+    <img src="ссылка-на-картинку" alt="картинка">
+</a>
+
+<div class="logo"><img src="ссылка на изображение">
+font-family: "PT Sans", "Arial", sans-serif; -если не включается один первый шрифт, включаеться второй
+<link href="//адрес/внешнего/шрифта" rel="stylesheet" type="text/css">
+
+<time detetime="2015-06-02">Вчера</time> - пользователь видет вчера а комп видит дату
+
+<figure>  -- тег из html5 удобен для изображений из-за подписи
+     <img src="/assets/course73/catfy.jpg">
+     <figcaption>Шерстяной наблюдатель</figcaption>
+</figure>
+
+<ВИДЕО>
+<video controls preload="metadata" width="400" height="225">
+    <source src="/ссылка/на/видео" type="video/mp4">
+</video>
+controls - показывает панель управление плеером
+</ВИДЕО>
+
+<ТАБЛИЦЫ>
+<table>
+<col width="20%"> 1 столбец (ячейка 1 и 4) 
+<col width="80">  2 столбец (ячейка 2 и 5)
+<colgrup width="10"> остальные два столбца 
+    <col>
+    <col>
+</colgrup>
+<caption>название таблицы</caption>
+    <tr> -- строка
+        <td>1</td>-- ячейка
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+</table>
+
+<th> - table header заменяет <td> делает шрифт жирным
+<thead> -- верхний ряд таблицы
+<tbody> -- тело таблицы
+<tfoot> -- подвал таблицы
+
+<td colspan="2"> зделать двойную ячейку по горизонтале
+<td rowspan="2"> зделать двойную ячейку по вертикале
+высоту таблицы задавать через px!!!!!!!!
+</ТАБЛИЦЫ>
+
+<ФОРМЫ>
+<form action="https://куда/отправить/форму" method="get(в адресной строке)/post(не видно пользователю)">
+<label> <!-- подпись формы -->
+    подпись<input type="text" name="search" id="используется в html" value="значение по умолчянию">
+</label>
+</form>
+
+<form action="https://куда/отправить/форму" method="get(в адресной строке)/post(не видно пользователю)">
+    <label for="login">логин</label>
+    <!-- куча кода -->
+    <input id="login" type="text" name="id-для php"> type="password" форма для пароля
+    <input type="submit" value="надпись на кнопке"> Кнопка
+    <input type="checkbox" checked(галочка по умолчянию)> -- галочка
+    <textarea rows(высота)="10" cols="20"(ширина)>для комментариев</textarea>
+</form>
+
+    <input type="radio" value="p"(значение) name="q"> -  переключатель (если нажать на label (подпись) то переключатель тоже включиться)
+    <input type="radio" name="toggle"> -- name="toggle" - при выборе одного выделение другуго убираеться (slider.css)
+    
+    <select name="имя для php" (multiple size="7" -список побольше)>
+      <optgroup label="группа вариантов 1">
+        <option value="значение1(не видно)" selected(выделенно)>первый пункт списка</option>
+        <option value="значение2">второй пункт списка</option>
+      </optgroup>    
+    </select>
+
+<form action="куда отправить форму" method="post" enctype="multipart/form-data">
+    <input type="file" name="имя для php"> <!--загрузга файла на сервер-->
+</form>
+
+<input type="hidden"> -- спрятанная от пользователя форма
+<input type="reset" value="сбрасывает все значения">
+<input type="button" value="кнопка"> кнопка для JavaScript (текст находиться по центру кнопки)
+<input type="image" src="ссылка на изобр" alt="алтернативный текст">
+<button type="submit"> название-кнопки<img src="/ссылка на изобр" alt=""></button>
+required -- обязательно для заполнения
+<input type="date">
+<input type="time"> -- отправить время 18:34
+
+<input type="`" list="browsers" name="browsers">
+    <datalist id="browsers">
+        <option value="firefox">  -- список вместе с текстовым
+        <option value="chrome">
+    </datalist>
+
+<input type="number" min="минимальное число" max="10" step="5"(шаг)>
+<input type="search" autofocus>
+autofocus -- автоматом ставит сюда курсор
+pattern="[0-9]{3}" допускаються значения от 0 до 10 и ток 3 цифры
+placeholder="вывод подсказки" -- подсказка в поле ввода
+readonly -- не дает редактировать введенное значение
+disabled -- не редактируемо нельзя копировать
+autocomplete="on" -- автозаполнение
+tabindex="3" переключение по TAB 
+<input type="datetime/datetime-local/week/month">
+<input type="range" min="1" max="10" step="1"> -- ползунок
+<input type="tel"> -- ТелефонЫ
+<input type="email"> -- поле для ввода email автоматически проверяет формат
+<input type="url"> -- поле для ввода url автоматически проверяет формат
+<input type="color"> -- ввести цвет
+
+<form action="адрес отправки" method="post" oninput(принять скрипт)>
+    <output name="имя для php"></output>-- вывод значений JavaScript
+</form>
+
+<fieldset> -- группы форм
+    <input type="text" maxlength="60"> 
+    <input type="text">
+</fieldset>
+<fieldset>
+    <legend>Заголовок группы</legend>
+    <input type="text">
+</fieldset>
+
+<локальное хранилише>
+        <script>
+            if (window.localStorage) {
+                var elements = document.querySelectorAll('[name]');
+
+                for (var i = 0, length = elements.length; i < length; i++) {
+                    (function(element) {
+                        var name = element.getAttribute('name');
+
+                        element.value = localStorage.getItem(name) || '';
+
+                        element.onkeyup = function() {
+                            localStorage.setItem(name, element.value);
+                        };
+                    })(elements[i]);
+                }
+            }
+        </script>
+</локальное>
+
+</ФОРМЫ>
+
+<!-- 
+блочные элементы - с новой строки <div> <p> <ul>
+строчные элементы - на той же строке, в css можно задать только горизонтальные отступы <a> <strong> <em> <span>
+-->
+<!-- блоки сгрупированы в группы -->
+<пример блочной верстки>
+    <div class="header">
+       <div class="layout-positioner">
+        <div class="layout-column-image">
+            Лого
+        </div>
+        <div class="layout-column-menu">
+            Меню
+        </div>
+       </div> 
+    </div>
+    
+    <div class="features">
+        <div class="layout-positioner">
+            <div class="layout-column">
+                колонка 1
+            </div>    
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="layout-positioner">
+            Футер
+        </div>  
+    </div>
+</пример> 
+
+<span>&hearts;</span> -- смайлик сердцо
+<span>&#9786;</span>  -- смайлик улыбающийся
+
+<li class="walden" data-filter="walden"></li> -- добавляем data атрибут (для js)
+
+&rarr; -- стрелка вправо
+    &(r/l/d)arr; -- стрелка вправо/лево/вниз
+    
+
+<meta http-equiv="Refresh" content="30"> -- каждые 30 секунд страница автоматически обновляеться
+
+<button><div></div></button> -- блок внутри автоматически выравниваеться по вертикали и горизонтали
+
+
+
+<!-- навигация по сайту -->
+
+<nav>
+  <a href="#page-1">1</a> 
+  <a href="#page-2">2</a>   <!-- при нажатии на ссылку страница скролица к scroll-page с id="...-2" -->
+  <a href="#page-3">3</a>
+</nav>
+
+<scroll-container> <!-- как слайдер -->
+  <scroll-page id="page-1">1</scroll-page>
+  <scroll-page id="page-2">2</scroll-page>
+  <scroll-page id="page-3">3</scroll-page>
+</scroll-container>
+
+scroll-container {
+    scroll-behavior: smooth; -- чтоб прокрутка была плавной
+}

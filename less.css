@@ -1,0 +1,166 @@
+@bg-color: #1d365d; -- создали переменную с цветом (глобальная переменная)
+
+body {
+    background-color: @bg-color; -- использовали переменную
+    @bg-color: red; -- можно создать внутреннею переменную (доступна только внутри правила, приоритет выше глобальной)
+}
+
+/* */
+
+spin(red, 90); -- поворот красного цвета на 90deg по кругу RGB
+    color: spin(red, 180); -- поменяли цвет шрифта
+    /* поворот на 180deg делает цвет контрастным */
+
+/* */
+
+/* В less проще задавать внутреннее правило */
+.outer {        
+    display: block;
+    .inner {
+        color: red;
+    }
+}
+
+Равносильно:
+
+.outer {
+    display: block
+}
+
+.outer .inner {
+    color: red;
+}
+
+/* */
+
+.super-button {
+    &-red {
+        color: red;
+    }
+    &blue {
+        color: blue;
+    }
+    &:hover {
+        background-color: #dadada;
+    }
+}
+
+Равносильно: 
+
+.super-button-red {
+    color: red;
+}
+.super-button-blue {
+    color: blue;
+}
+.super-button:hover {
+    background-color: #dadada;
+}
+
+/* */
+
+
+/* можно проводить вычисления прям в less */
+
+padding-top: 10px + 20; -- отступ 30px
+rgb(10, 10, 10) + 10; -- rgb(20, 20, 20);
+
+/* */
+
+lighten(red, 50%); -- делает цвет на 50% светлее
+darken(blue, 25%); -- делает синий цвет на 25% светлее
+saturate(green, 20%); -- увеличиваем насыщенность
+desaturate(blue, 50%); -- уменьшаем насышенность
+    color: lighten(red, 50%);
+    /* можно использовать с HOVER */
+
+color: saturate(lighten(red, 50%), 20%); -- можно вкладывать функци
+
+
+/* Примеси */
+
+.text {
+    .wrapper; -- применяються все стили из wrapper
+}
+
+.red() {  // ()-чтоб не выводить примесь в css
+    background-color: red;
+}
+
+
+.paint(@color) {  // примесь с параметром
+    background-color: @color;  
+}
+
+.big(@size: 100px) { // если не передать значение в примесь, то будет 100px
+    width: @size;
+}
+
+.big(@width; @height) { //несколько параметров в примеси
+    
+}
+
+
+/* изменить поведение примеси в зависимости от передаваемого параметра */
+
+.set-font-size(@size) { // без smaller включаеться эта
+    font-size: @size;
+}
+
+.set-font-size(smaller; @size) { // когда передаем параметр smaller включаеться эта примесь
+    font-size: @size / 2;
+}
+
+.set-font-size(bigger; @size) { // когда передаем параметр bigger включаеться эта примесь
+    font-size: @size * 2;
+}
+
+
+.set-font-size(@_; @size) {  // универсальный шаблон(применяеться и к bigger и к smaller)
+    color: #dadada;
+}
+
+
+.mixin(@variable) when (@variable = 1) {  // условие в примеси
+    width: @variable*10;  // свойство применяеться ток при выполнении условия
+}
+
+.mixin(@color) when (lightness(@color) = 100%) {
+    // сделать что-то, когда цвет полностью белый
+}
+
+
+/* Проверка типа значений */
+
+iscolor(@param) -- проверяет что в переменной @param находиться цвет
+isnumber(@param) -- проверяет что число
+isstring(@param) -- проверяет что строка
+iskeyword(@param) -- провяет что ключивое слово
+isurl(@param) -- проверка url
+
+/* */
+
+@state: succes;
+@property: color;
+@pixels: 2;
+.btn-@{state} {  // тождественно .btn-succes
+    background-@{property}: blue;
+    border: ~"@{pixels}px solid red" // ~ нужна чтоб склеить 2 и px
+}
+
+/* */
+
+@number: 2;
+.monster-@{number} { // в зависимости от числа выбираем монстра
+    background-color: red;
+}
+
+
+/* Цикл */
+
+.generate-color(@n) when (@n < 10) { // цикл повторяеться 10 раз
+    .monter-@{n} {     // monter-1/2/3... делает всем красный фон
+        background-color: red;
+    }
+    .generate-colors(@n + 1);
+}
