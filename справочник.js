@@ -264,3 +264,10 @@ color = window.getComputedStyle(element).backgroundColor;
 /* */
 
 var isOpen = confirm('open?'); //   появляеться окно с выбором да/нет (isOpen - имеет булевое значение)
+
+
+
+if (a.classList.contains('discount'));  // проверка есть ли у переменной A класс dicsount
+
+
+Number(allPrice[i].innerHTML); //   строку полученную из html преобразую в число
